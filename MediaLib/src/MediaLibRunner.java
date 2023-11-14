@@ -56,7 +56,10 @@ public class MediaLibRunner
 	System.out.println(newBook2 + " equal " + newBook + "? "  + newBook2.equals(newBook));
  
 	// Step 27 - 28
-	// this statement will not compile: System.out.println(newBook2.title);   
- 
+	// this statement will not compile: System.out.println(newBook2.title);  
+
+	Song newSong1 = new Song("What a Wonderful World");
+	myLib2.addSong(newSong1);
+	System.out.println(myLib2);
   }
 }
