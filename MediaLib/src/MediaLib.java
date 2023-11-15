@@ -1,5 +1,6 @@
 public class MediaLib
 {
+  private Movie movie;
   private Book book;
   private Song song;
   public static String owner = "PLTW";
@@ -14,13 +15,21 @@ public class MediaLib
         System.out.println("Library already contains a book. Cannot add another book.");
     }
 }
+  public void addMovie(Movie m) {
+      if (movie == null) {
+          movie = m;
+          numEntries++;
+      } else {
+          System.out.println("Library already contains a movie. Cannot add another movie.");
+      }
+  }
 //Step 27
   public void addSong(Song s) {
     if (song == null) {
         song = s;
         numEntries++;
     } else {
-        System.out.println("Library already contains a book. Cannot add another book.");
+        System.out.println("Library already contains a song. Cannot add another song.");
     }
 }
  // optional step 24
@@ -44,16 +53,18 @@ public void changeBook(Book newBook) {
   }
   */
    
-  public String toString()  
-  {
-	String info = "";
- 
-	// Step 5, avoid crashing by testing that book is not null before using its toString method
-	if (book != null)
-  	info += "Book: " + book + "\n" + "Song: " + song;
- 
-	return info;
-  }
+  public String toString() {
+    String info = "";
+
+    if (book != null) {
+        info += "Book: " + book + "\n";
+    }
+    if (song != null) {
+        info += "Song: " + song;
+    }
+
+    return info;
+}
 
   //Step 8
   public void changeOwner(String newOwner) {
