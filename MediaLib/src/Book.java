@@ -9,6 +9,7 @@ public class Book
   {
 	title = t;
 	author = a;
+  // System.out.println("Adding book " + t);
   }
  
    /*** Accessor methods ***/
@@ -22,11 +23,12 @@ public class Book
  
   public int getRating() {
 	return rating;
+  // return r;
   }
  
   public String toString()  
   {
-	String info = "\"" + title + "\", written by " + author;
+  String info = "\"" + title + "\", written by " + author;
 	if (rating != 0)  
  	info += ", rating is " + rating;
 	 
@@ -36,6 +38,7 @@ public class Book
   // Step 23 - 29
   public boolean equals(Book b)
   {
+    // System.out.println("Checking book " + t);
 	// variations of the if statement:
 	// if(b.title.equals(getTitle()) && b.author.equals(getAuthor()))
 	// if(title.equals(b.title) && author.equals(b.author))
@@ -58,6 +61,7 @@ public class Book
   // Step 7: create the method
   public void adjustRating(int r)
   {
+    System.out.println("Adjusting rating by " + r);
 	// Step 10-11 improve the method
 	if ((rating + r >= 0) && (rating + r <= 10))
   	rating += r;
@@ -65,6 +69,11 @@ public class Book
 	r = 10;// Step 9: changing the param here has no effect in the runner
  
   }
+  
+//   public String getInfo()
+// {
+//    return "The current book information is " + info;
+// }
  
 }
 
